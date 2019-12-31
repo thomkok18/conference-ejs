@@ -1,11 +1,3 @@
-// const http = require('http');
-//
-// const server = http.createServer((req, res, next) => {
-//     console.log(req.method);
-// });
-//
-// server.listen(3000);
-
 const express = require('express');
 const homeRoutes = require("../controllers/homeController");
 const conferencesRoutes = require("../controllers/conferenceController");
@@ -24,9 +16,5 @@ router.post('/conference/add', conferencesRoutes.postStoreConference);
 
 // router.get('/users', usersRoutes.getAllusers);
 // router.get('/users/:id', usersRoutes.getUser);
-
-// router.get('/admin', (req, res, next) => {
-//     res.render('admin');
-// });
 
 module.exports = router;
