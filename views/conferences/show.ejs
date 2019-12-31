@@ -1,0 +1,14 @@
+<%- include('../partials/header'); %>
+<main>
+    <%= cTitle %>
+    <%= cDescription %>
+    <%= company %>
+    <%= size %>
+    <%= dateStart %>
+    <%= dateEnd %>
+    <%= createdAt %>
+    <%= updatedAt %>
+    <a href="/conference/edit/<%= id %>">Edit</a>
+    <a href="/conference/destroy/<%= id %>">Delete</a>
+</main>
+<%- include('../partials/footer'); %>

@@ -1,0 +1,18 @@
+<%- include('../partials/header'); %>
+<main>
+    <a href="/conference/add">Add conference</a>
+    <div>
+        <% if (conferences) { %>
+            <% conferences.forEach(function(conference) { %>
+                <div>
+                    <div>
+                        <%= conference.title %>
+                    </div>
+                    <small><%= conference.description %></small>
+                    <a href="/conference/show/<%= conference.id %>">show</a>
+                </div>
+            <% }); %>
+        <% } %>
+    </div>
+</main>
+<%- include('../partials/footer'); %>
