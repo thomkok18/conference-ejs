@@ -68,11 +68,7 @@ exports.postUpdateConference = (req, res, next) => {
 
 exports.getDestroyConference = (req, res, next) => {
     const id = req.params.id;
-    Conference.destroy(
-        {
-            where: {id: id}
-        }
-    ).then(() => {
+    Conference.destroy({where: {id: id}}).then(() => {
         console.log('Done');
     }).catch(err => {
         console.log(err);
