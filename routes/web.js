@@ -1,16 +1,16 @@
 const express = require('express');
-const homeRoutes = require("../controllers/homeController");
-const conferencesRoutes = require("../controllers/conferenceController");
+const homeController = require("../controllers/homeController");
+const conferencesController = require("../controllers/conferenceController");
 
 const router = express.Router();
 
-router.get('/', homeRoutes.getHome);
-router.get('/conference', conferencesRoutes.getAllconferences);
-router.get('/conference/show/:id', conferencesRoutes.getConference);
-router.get('/conference/edit/:id', conferencesRoutes.getEditConference);
-router.post('/conference/update/:id', conferencesRoutes.postUpdateConference);
-router.get('/conference/destroy/:id', conferencesRoutes.getDestroyConference);
-router.get('/conference/add', conferencesRoutes.getAddConference);
-router.post('/conference/add', conferencesRoutes.postStoreConference);
+router.get('/', homeController.getHome);
+router.get('/conference', conferencesController.getAllconferences);
+router.get('/conference/show/:id', conferencesController.getConference);
+router.get('/conference/edit/:id', conferencesController.getEditConference);
+router.post('/conference/update/:id', conferencesController.postUpdateConference);
+router.get('/conference/destroy/:id', conferencesController.getDestroyConference);
+router.get('/conference/add', conferencesController.getAddConference);
+router.post('/conference/add', conferencesController.postStoreConference);
 
 module.exports = router;
