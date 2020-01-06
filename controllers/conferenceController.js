@@ -110,9 +110,9 @@ exports.getEditConference = (req, res, next) => {
 };
 
 exports.getConference = (req, res, next) => {
-    const conferenceId = req.params.conferenceId;
+    const id = req.params.id;
 
-    Conference.findByPk(conferenceId).then(conference => {
+    Conference.findByPk(id).then(conference => {
         res.render('conferences/show', {
             path: '/conference',
             title: 'One conference',
