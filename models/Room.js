@@ -10,7 +10,7 @@ const room = sequelize.define('rooms', {
         allowNull: false,
         primaryKey: true
     },
-    room_id: {
+    location_id: {
         references: {
             // This is a reference to another model
             model: Location,
