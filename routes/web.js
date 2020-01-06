@@ -1,7 +1,6 @@
 const express = require('express');
 const homeRoutes = require("../controllers/homeController");
 const conferencesRoutes = require("../controllers/conferenceController");
-// const usersRoutes = require("../controllers/userController");
 
 const router = express.Router();
 
@@ -13,8 +12,5 @@ router.post('/conference/update/:id', conferencesRoutes.postUpdateConference);
 router.get('/conference/destroy/:id', conferencesRoutes.getDestroyConference);
 router.get('/conference/add', conferencesRoutes.getAddConference);
 router.post('/conference/add', conferencesRoutes.postStoreConference);
-
-// router.get('/users', usersRoutes.getAllusers);
-// router.get('/users/:id', usersRoutes.getUser);
 
 module.exports = router;
