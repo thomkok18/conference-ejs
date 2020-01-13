@@ -1,0 +1,19 @@
+<%- include('../partials/header'); %>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <ul>
+                    <% locations.forEach(function (location) { %>
+                        <li>
+                            <h4><a href="/locations/<%= location.id %>">
+                                    <%= location.name %>
+                                </a></h4>
+                        </li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include('../partials/footer'); %>
