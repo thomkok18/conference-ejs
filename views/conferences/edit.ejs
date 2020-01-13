@@ -1,19 +1,26 @@
 <%- include('../partials/header'); %>
 <main>
-    <form class="form" action="/conference/update/<%= id %>" method="post">
-        <label for="title">Title</label>
-        <input id="title" type="text" name="title" placeholder="title" value="<%= title %>">
-        <label for="description">Description</label>
-        <input id="description" type="text" name="description" placeholder="description" value="<%= description %>">
-        <label for="company">Company</label>
-        <input id="company" type="text" name="company" placeholder="company" value="<%= company %>">
-        <label for="size">Size</label>
-        <input id="size" type="number" name="size" placeholder="size"  value="<%= size %>">
-        <label for="dateStart">Start Date/Time</label>
-        <input id="dateStart" type="datetime-local" name="dateStart" value="<%= dateStart %>">
-        <label for="dateEnd">End Date/Time</label>
-        <input id="dateEnd" type="datetime-local" name="dateEnd" value="<%= dateEnd %>">
-        <button type="submit">Update</button>
-    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form class="form" action="/conference/update/<%= id %>" method="post">
+                    <label for="title">Title</label>
+                    <input id="title" type="text" name="title" placeholder="title" value="<%= title %>">
+                    <label for="description">Description</label>
+                    <input id="description" type="text" name="description" placeholder="description"
+                           value="<%= description %>">
+                    <label for="company">Company</label>
+                    <input id="company" type="text" name="company" placeholder="company" value="<%= company %>">
+                    <label for="size">Size</label>
+                    <input id="size" type="number" name="size" placeholder="size" value="<%= size %>">
+                    <label for="dateStart">Start Date/Time</label>
+                    <input id="dateStart" type="datetime-local" name="dateStart" value="<%= dateStart %>">
+                    <label for="dateEnd">End Date/Time</label>
+                    <input id="dateEnd" type="datetime-local" name="dateEnd" value="<%= dateEnd %>">
+                    <button type="submit">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </main>
 <%- include('../partials/footer'); %>
