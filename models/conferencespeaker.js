@@ -1,4 +1,6 @@
 'use strict';
+const Conference = require('../models/conference');
+const Speaker = require('../models/speaker');
 module.exports = (sequelize, DataTypes) => {
   const ConferenceSpeaker = sequelize.define('ConferenceSpeaker', {
     conferenceId: DataTypes.INT,
@@ -6,11 +8,11 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   ConferenceSpeaker.associate = function(models) {
     // associations can be defined here
-    ConferenceSpeaker.hasMany(models.Conference, {
+    ConferenceSpeaker.hasMany(Conference, {
       foreignKey: 'id',
       sourceKey: 'conferenceId'
     });
-    ConferenceSpeaker.hasMany(models.Speaker, {
+    ConferenceSpeaker.hasMany(Speaker, {
       foreignKey: 'id',
       sourceKey: 'speakerId'
     });
