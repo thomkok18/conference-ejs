@@ -1,19 +1,8 @@
-// const http = require('http');
-//
-// const server = http.createServer((req, res, next) => {
-//     console.log(req.method);
-// });
-//
-// server.listen(3000);
-
 const bodyParser = require('body-parser');
 const express = require('express');
 
 const path = require('path');
 const staticRoutes = require('./routes/web');
-
-// models
-const conference = require('./models/Conference');
 
 // database
 const sequelize = require('./utils/database');
