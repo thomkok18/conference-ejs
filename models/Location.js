@@ -1,13 +1,10 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../utils/database');
-
-const location = sequelize.define('locations', {
-    id: {
-        type: Sequelize.BIGINT,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true
-    }
-});
-
-module.exports = location;
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const Location = sequelize.define('Location', {
+    name: DataTypes.STRING
+  }, {});
+  Location.associate = function(models) {
+    // associations can be defined here
+  };
+  return Location;
+};
