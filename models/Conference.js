@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Conference.associate = function(models) {
     // associations can be defined here
+    Conference.belongsTo(models.ConferenceSpeaker, {
+      foreignKey: 'id',
+      targetKey: 'conferenceId'
+    });
   };
   return Conference;
 };
