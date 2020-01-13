@@ -2,7 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 
 const path = require('path');
-const staticRoutes = require('./routes/web');
+const routes = require('./routes/web');
 
 // database
 const sequelize = require('./utils/database');
@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded(
     {extended: false}
 ));
 
-app.use('/', staticRoutes);
+app.use('/', routes);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
