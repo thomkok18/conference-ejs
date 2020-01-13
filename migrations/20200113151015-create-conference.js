@@ -8,6 +8,15 @@ module.exports = {
         allowNull: false,
         primaryKey: true
       },
+      roomId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        foreignKey: true,
+        references: {
+          model: 'rooms',
+          key: 'id'
+        }
+      },
       title: {
         type: Sequelize.STRING,
         allowNull: false

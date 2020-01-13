@@ -9,10 +9,22 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       conferenceId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        foreignKey: true,
+        references: {
+          model: 'conferences',
+          key: 'id'
+        }
       },
       speakerId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        foreignKey: true,
+        references: {
+          model: 'speakers',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,
