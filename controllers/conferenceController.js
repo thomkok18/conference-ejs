@@ -1,9 +1,9 @@
-const Conference = require('../models/Conference');
+const Conference = require('../models/conference');
 const dateFormat = require('dateformat');
 
 exports.getAddConference = (req, res, next) => {
     const error = req.query.error;
-    res.render('conferences/add', {
+    res.render('conferences/create', {
         title: 'Add conference',
         description: 'What kind of conferences do you want to register?',
         error: error ? error : ''
@@ -31,9 +31,9 @@ exports.postStoreConference = (req, res, next) => {
         }).catch(err => {
             console.log(err);
         });
-        res.redirect('/conference');
+        return res.redirect('/conference');
     } else {
-        res.redirect('/conference/add?error=1');
+        return res.redirect('/conference/create?error=1');
     }
 };
 
@@ -63,17 +63,17 @@ exports.postUpdateConference = (req, res, next) => {
     }).catch(err => {
         console.log(err);
     });
-    res.redirect('/conference');
+    return res.redirect('/conference');
 };
 
-exports.getDestroyConference = (req, res, next) => {
+exports.postDestroyConference = (req, res, next) => {
     const id = req.params.id;
     Conference.destroy({where: {id: id}}).then(() => {
         console.log('Done');
     }).catch(err => {
         console.log(err);
     });
-    res.redirect('/conference');
+    return res.redirect('/conference');
 };
 
 exports.getAllconferences = (req, res, next) => {
