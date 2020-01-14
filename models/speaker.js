@@ -8,24 +8,13 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Speaker.associate = function(models) {
     // associations can be defined here
-    Speaker.belongsTo(Company, {
-      onDelete: "CASCADE",
-      foreignKey: {
-        allowNull: false
-      }
-    });
-    Speaker.belongsTo(ConferenceSpeaker, {
+    Speaker.belongsTo(models.Company);
+    Speaker.belongsTo(models.ConferenceSpeaker, {
       foreignKey: 'id',
       targetKey: 'speakerId'
     });
-    Speaker.belongsTo(User, {
-      foreignKey: 'id',
-      targetKey: 'userId'
-    });
-    Speaker.belongsTo(Company, {
-      foreignKey: 'id',
-      targetKey: 'companyId'
-    });
+    Speaker.belongsTo(models.User);
+    Speaker.belongsTo(models.Company);
   };
   return Speaker;
 };

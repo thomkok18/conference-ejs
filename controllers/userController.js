@@ -1,7 +1,7 @@
-const User = require('../models/user');
+const models = require("../models");
 
 // exports.getAllRooms = (req, res, next) => {
-//     Room.findAll().then(rooms => {
+//     models.Room.findAll().then(rooms => {
 //         console.log(rooms);
 //         res.render('rooms/index', {
 //             rooms: rooms

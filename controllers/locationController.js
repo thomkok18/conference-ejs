@@ -1,7 +1,7 @@
-const Location = require('../models/location');
+const models = require("../models");
 
 exports.getAllLocations = (req, res, next) => {
-    Location.findAll().then(locations => {
+    models.Location.findAll().then(locations => {
         console.log(locations);
         res.render('locations/index', {
             locations: locations

@@ -1,4 +1,4 @@
-const Conference = require('../models/conference');
+const models = require("../models");
 const dateFormat = require('dateformat');
 
 exports.getAddConference = (req, res, next) => {
@@ -19,7 +19,7 @@ exports.postStoreConference = (req, res, next) => {
     const dateEnd = req.body.dateEnd;
 
     if (dateStart !== "" && dateEnd !== "") {
-        Conference.create({
+        models.Conference.create({
             title: title,
             description: description,
             company: company,
@@ -46,7 +46,7 @@ exports.postUpdateConference = (req, res, next) => {
     const dateStart = req.body.dateStart;
     const dateEnd = req.body.dateEnd;
 
-    Conference.update(
+    models.Conference.update(
         {
             title: title,
             description: description,
@@ -68,7 +68,7 @@ exports.postUpdateConference = (req, res, next) => {
 
 exports.postDestroyConference = (req, res, next) => {
     const id = req.params.id;
-    Conference.destroy({where: {id: id}}).then(() => {
+    models.Conference.destroy({where: {id: id}}).then(() => {
         console.log('Done');
     }).catch(err => {
         console.log(err);
@@ -77,7 +77,7 @@ exports.postDestroyConference = (req, res, next) => {
 };
 
 exports.getAllconferences = (req, res, next) => {
-    Conference.findAll().then(conferences => {
+    models.Conference.findAll().then(conferences => {
         console.log(conferences);
         res.render('conferences/index', {
             conferences: conferences
@@ -90,7 +90,7 @@ exports.getAllconferences = (req, res, next) => {
 exports.getEditConference = (req, res, next) => {
     const id = req.params.id;
 
-    Conference.findByPk(id).then(conference => {
+    models.Conference.findByPk(id).then(conference => {
         res.render('conferences/edit', {
             id: id,
             title: conference.title,
@@ -108,7 +108,7 @@ exports.getEditConference = (req, res, next) => {
 exports.getConference = (req, res, next) => {
     const id = req.params.id;
 
-    Conference.findByPk(id).then(conference => {
+    models.Conference.findByPk(id).then(conference => {
         res.render('conferences/show', {
             path: '/conference',
             title: 'One conference',
